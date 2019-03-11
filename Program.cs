@@ -23,7 +23,22 @@ namespace myApp
             Console.WriteLine("Miles: " + tst);
             Console.WriteLine("Yards: " + Math.Truncate(final_yards));
             Console.WriteLine("Feet : " + feetz);
-            
+        }
+
+        public static void YardsCalctoMiles(Double dist, Double miles){
+            Double fnl_miles;
+            Double final_yards; 
+            Double tst;
+
+            if (dist < 1760 ){
+                fnl_miles = 0;
+            }
+            else { fnl_miles = dist/1760;}
+            tst = miles + Math.Truncate(fnl_miles);
+            final_yards = Math.Truncate(dist%1760);
+
+            Console.WriteLine("Miles: " + tst);
+            Console.WriteLine("Yards: " + final_yards);
         }
         static void Main(string[] args)
         {
@@ -92,6 +107,9 @@ namespace myApp
             }
             else if (x1=="m" && (x2=="f")){      
                 FeetCalcToMiles(Input_Scd_Dist[0], Input_First_Dist[0]);            
+            }
+            else if (x1=="m" && x2=="y"){
+                YardsCalctoMiles(Input_Scd_Dist[0], Input_First_Dist[0]);
             }
         }
     }
