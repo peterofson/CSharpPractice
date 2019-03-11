@@ -40,6 +40,22 @@ namespace myApp
             Console.WriteLine("Miles: " + tst);
             Console.WriteLine("Yards: " + final_yards);
         }
+
+        public static void FeetPlusFeet(Double first_feet, Double scd_feet){
+            Double miles;
+            Double fnl_feet;
+            Double fnl_yrds;
+            Double feet_sum = first_feet + scd_feet;
+            if (feet_sum < 5280) { miles = 0; }
+            else { miles = Math.Truncate(feet_sum/5280); }
+                
+            fnl_yrds = (feet_sum%5280)/3;
+            fnl_feet = (feet_sum%5280)%3; 
+            
+             Console.WriteLine("Miles: " + miles);
+            Console.WriteLine("Yards: " + Math.Truncate(fnl_yrds));
+            Console.WriteLine("Feet : " + fnl_feet);
+        }
         static void Main(string[] args)
         {
              // Create an empty list to store values 
@@ -101,6 +117,8 @@ namespace myApp
                 // Determing which function to use - if any 
                 // Maybe come up with a loop for the follwing 
                 //////////////////////////////////////////////
+                
+                /// Miles is first choice 
             if ((x1 == "m") && (x2 =="m")){
                 final_miles = Input_First_Dist[0] + Input_Scd_Dist[0];
                 Console.WriteLine("Total miles = " + final_miles);
@@ -110,6 +128,26 @@ namespace myApp
             }
             else if (x1=="m" && x2=="y"){
                 YardsCalctoMiles(Input_Scd_Dist[0], Input_First_Dist[0]);
+            }
+            /// Feet is first choice 
+            else if (x1=="f" && x2 == "m"){
+                FeetCalcToMiles(Input_First_Dist[0],Input_Scd_Dist[0]);
+            }
+            else if (x1=="f" && x2=="f"){
+                FeetPlusFeet(Input_First_Dist[0],Input_Scd_Dist[0]);
+            }
+            else if (x1=="f" && x2=="y"){
+
+            }
+            /// Yards is first choice 
+            else if (x1=="y" && x2=="m"){
+    
+            }
+            else if (x1=="y" && x2=="f"){
+
+            }
+            else if (x1=="y" && x2=="y"){
+
             }
         }
     }
