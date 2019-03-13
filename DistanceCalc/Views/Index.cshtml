@@ -1,0 +1,46 @@
+﻿@model DistanceCalc.Models.AdditionViewModel
+@{
+    Layout = null;
+}
+@using (Html.BeginForm())
+{<fieldset>
+   <legend style="color:blue"> Calculate Two Distances </legend>
+
+    <input type="button"
+           value="Miles"
+           name="command" />
+    <input type="button"
+           value="Yards"
+           name="command" />
+    <input type="button"
+           value="Feet"
+           name="command" />
+    @Html.EditorFor(x => x.A) <br /> <br />
+
+    <input type="button"
+           value="Miles"
+           name="push" />
+    <input type="button"
+           value="Yards"
+           name="push" />
+    <input type="button"
+           value="Feet"
+           name="push" />
+    @Html.EditorFor(x => x.B)
+        <br /> <br />
+    <input type ="submit"
+           value="Calculate"
+           name="calc" />
+        <h2 style="color:black">
+
+            @Html.Label("Miles:")
+            @Html.DisplayFor(x => x.Miles) <br /> 
+
+            @Html.Label("Yards: ")
+            @Html.DisplayFor(x => x.Yards) <br />
+            
+            @Html.Label("Feet: ")
+            @Html.DisplayFor(x=> x.Feet)
+        </h2>
+</fieldset>
+    }
